@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #F5F6FA;
+
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color:transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #050c26;
+        border-radius: 20px;
+        border: 3px solid #050c26;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    user-select: none;
+}
+
+.container {
+    padding: 16px 0;
+    width: 88.9%;
+    max-width: 1920px;
+    margin: 0 auto;
+}

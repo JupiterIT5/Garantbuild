@@ -1,0 +1,361 @@
+.header__container {
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 19px 18px;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    width: 248px;
+    height: 42px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 44px;
+
+    a {
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 18px;
+      color: #071b29;
+    }
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .phone {
+      width: 216px;
+      height: 36px;
+      border: 1px solid rgba($color: #071b29, $alpha: 0.3);
+      border-radius: 40px;
+      padding: 3px, 20px, 3px, 3px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-left: 2px;
+      }
+
+      p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        color: #071b29;
+      }
+    }
+
+    .language {
+      width: 108px;
+      height: 36px;
+      border: 1px solid rgba($color: #071b29, $alpha: 0.3);
+      border-radius: 40px;
+      padding: 3px, 20px, 3px, 3px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-left: 2px;
+      }
+
+      p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        color: #071b29;
+        position: relative;
+        display: flex;
+
+        &::after {
+          content: url(../../image/icon/array.svg);
+          margin-left: 3px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+
+  .btn__menu {
+    width: 46px;
+    height: 46px;
+    background-color: #063c5f;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: .5s ease-in;
+    cursor: pointer;
+
+    span {
+      border: 1px solid #fff;
+      width: 24px;
+      transition: .5s ease-in;
+    }
+  }
+
+  .btn__menu_active {
+    position: relative;
+    .center {
+      opacity: 0;
+      position: absolute;
+    }
+    .left {
+      position: absolute;
+      transform: rotate(45deg);
+      transition: .5s ease-in;
+    }
+    .right {
+      position: absolute;
+      transform: rotate(-45deg);
+      transition: .5s ease-in;
+    }
+  }
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  transform: translateY(-200px);
+  transition: .8s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    a {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      color: #1d1d1d;
+    }
+  }
+
+  .btn__form {
+    height: 48px;
+    background: #f9932f;
+    border-radius: 4px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  hr {
+    margin: 20px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .phone {
+    width: 216px;
+    height: 36px;
+    border: 1px solid rgba($color: #071b29, $alpha: 0.3);
+    border-radius: 40px;
+    padding: 3px, 20px, 3px, 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-left: 2px;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      color: #071b29;
+    }
+  }
+
+  .language {
+    width: 108px;
+    height: 36px;
+    border: 1px solid rgba($color: #071b29, $alpha: 0.3);
+    border-radius: 40px;
+    padding: 3px, 20px, 3px, 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-left: 2px;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      color: #071b29;
+      position: relative;
+      display: flex;
+
+      &::after {
+        content: url(../../image/icon/array.svg);
+        margin-left: 3px;
+        margin-top: -2px;
+      }
+    }
+  }
+
+  h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    color: #071b29;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .website {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.menu__active {
+  transform: translateY(0);
+  transition: .8s ease-in;
+  opacity: 1;
+  visibility: inherit;
+}
+
+@media (max-width: 1323px) {
+  .header {
+    height: 65px;
+
+    .logo {
+      width: 165px;
+      height: 32px;
+    }
+
+    .nav {
+      gap: 20px;
+
+      a {
+        font-size: 16px;
+      }
+    }
+
+    .contact {
+      .webapp {
+        width: 30px;
+        height: 30px;
+      }
+
+      .phone {
+        width: 186px;
+        height: 32px;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .language {
+        width: 88px;
+        height: 32px;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .header {
+    .nav,
+    .contact,
+    .language {
+      display: none;
+    }
+    .btn__menu {
+      display: flex;
+    }
+  }
+  .menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+
+    .nav {
+      flex-direction: column;
+      gap: 14px;
+      align-items: start;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+  }
+
+  .menu__active {
+    transform: translateX(0);
+  }
+}

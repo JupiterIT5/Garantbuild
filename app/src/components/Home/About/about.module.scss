@@ -1,0 +1,261 @@
+.about__container {
+  position: relative;
+}
+
+.section__about {
+  background-image: url(../../../image/photo/Home/about.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #063c5f;
+  width: 100%;
+  height: 581px;
+  border-radius: 16px;
+  margin-top: 20px;
+  padding-top: 50px;
+  padding-left: 58px;
+  position: relative;
+
+  .text {
+    h1 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 50px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #ffffff;
+      width: 45%;
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: #fff;
+      font-family: Inter;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 300;
+      width: 45%;
+      margin-bottom: 100px;
+    }
+
+    a {
+      width: 379px;
+      height: 62px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 44px;
+      padding: 0 5px;
+
+      h2 {
+        margin-left: 45px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        color: #041b2a;
+      }
+    }
+  }
+}
+
+.form {
+  padding: 24px;
+  position: absolute;
+  width: 476px;
+  background: #ffffff;
+  border-radius: 14px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  right: 58px;
+
+  h3 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: #071b29;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #071b29;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+
+  form {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+
+    input {
+      padding: 18px;
+      height: 58px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #071b29;
+      opacity: 0.4;
+    }
+
+    textarea {
+      padding: 18px;
+      height: 106px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #071b29;
+      opacity: 0.4;
+      resize: none;
+    }
+
+    .submit {
+      height: 58px;
+      background: #f9932f;
+      border-radius: 4px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1169px) {
+  .form {
+    width: 376px;
+    right: 25px;
+  }
+  .section__about {
+    padding-left: 38px;
+
+    .text {
+      h1 {
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        width: 40%;
+      }
+
+      a {
+        width: 309px;
+
+        h2 {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 875px) {
+  .form {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .section__about {
+    padding-left: 38px;
+    padding-right: 38px;
+
+    .text {
+      h1 {
+        font-size: 28px;
+        line-height: 36px;
+        width: 100%;
+      }
+
+      p {
+        font-size: 16px;
+        width: 100%;
+      }
+
+      a {
+        position: absolute;
+        left: 38px;
+        bottom: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 453px) {
+  .section__about {
+    padding: 30px 22px;
+
+    .text {
+      h1 {
+        font-size: 24px;
+        line-height: 32px;
+        width: 100%;
+      }
+
+      p {
+        font-size: 14px;
+        width: 100%;
+      }
+
+      a {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 30px;
+        min-width: 261px;
+        width: 87%;
+        height: 48px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        h2 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .form {
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 13px;
+    }
+    form {
+        input, textarea, .submit {
+            font-size: 16px;
+        }
+    }
+  }
+}
