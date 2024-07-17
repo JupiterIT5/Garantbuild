@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     if (!localStorage.getItem('Language')) {
       localStorage.setItem('Language', 'EN')
+      location.reload()
     }
   }, [])
 

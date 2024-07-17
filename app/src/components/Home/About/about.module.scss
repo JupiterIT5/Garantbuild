@@ -114,7 +114,7 @@
       line-height: 22px;
       color: #071b29;
       outline: none;
-      
+
       &::placeholder {
         opacity: 0.4;
       }
@@ -137,6 +137,24 @@
       &::placeholder {
         opacity: 0.4;
       }
+    }
+
+    .input__error {
+      border: 1px solid rgba(241, 0, 0, 1);
+    }
+
+    .text__none {
+      display: none;
+    }
+
+    .text__error {
+      margin-top: -8px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #f10000;
     }
 
     .submit {
@@ -255,15 +273,17 @@
 
   .form {
     h3 {
-        font-size: 20px;
+      font-size: 20px;
     }
     p {
-        font-size: 13px;
+      font-size: 13px;
     }
     form {
-        input, textarea, .submit {
-            font-size: 16px;
-        }
+      input,
+      textarea,
+      .submit {
+        font-size: 16px;
+      }
     }
   }
 }
