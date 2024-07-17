@@ -7,17 +7,22 @@ import Services from "../components/Home/Services/Services";
 import Steps from "../components/Steps/Steps";
 import cl from "./style.module.scss";
 
-export default function Home() {
+interface HomeData {
+  language: Function,
+  setLanguage: Function
+}
+
+export default function Home({language, setLanguage}: HomeData) {
 
   return (
     <div className={cl.container}>
-      <Header />
-      <About />
-      <Services />
-      <Quality />
-      <Experience />
-      <Steps />
-      <Footer />
+      <Header setCurrentLanguage={setLanguage} currentLanguage={language}/>
+      <About currentLanguage={language}/>
+      <Services currentLanguage={language}/>
+      <Quality currentLanguage={language}/>
+      <Experience currentLanguage={language}/>
+      <Steps currentLanguage={language}/>
+      <Footer currentLanguage={language}/>
     </div>
   );
 }

@@ -7,24 +7,26 @@ import Description from "../components/Catalog/Description/Description"
 import Project from "../components/Catalog/Project/Project"
 
 interface PageData {
+    language: Function,
+    setLanguage: Function,
     fon: string, 
     projects: Array<string>,
-    title: string,
-    subtitle: string,
-    title2: string,
-    description: string,
+    title: Array<string>,
+    subtitle: Array<string>,
+    title2: Array<string>,
+    description: Array<string>,
 }
 
-export default function Catalog({fon, projects, title, subtitle, title2, description}: PageData) {
+export default function Catalog({language, setLanguage, fon, projects, title, subtitle, title2, description}: PageData) {
 
     return (
         <div className={cl.container}>
-            <Header />
-            <About fon={fon} title={title} subtitle={subtitle}/>
-            <Description currentPage={title} title={title2} description={description}/>
-            <Project projects={projects} />
-            <Steps />
-            <Footer />
+            <Header setCurrentLanguage={setLanguage} currentLanguage={language} />
+            <About fon={fon} title={title} subtitle={subtitle} currentLanguage={language}/>
+            <Description currentPage={title} title={title2} description={description} currentLanguage={language}/>
+            <Project projects={projects} currentLanguage={language} />
+            <Steps currentLanguage={language}/>
+            <Footer currentLanguage={language}/>
         </div>
     )
 }

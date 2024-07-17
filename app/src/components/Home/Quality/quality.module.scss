@@ -15,7 +15,7 @@
 
   .quality__container {
     display: grid;
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     gap: 20px;
 
     .quality:nth-child(1) {
@@ -87,7 +87,7 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        margin-top: 80px;
+        margin-top: 60px;
         align-items: start;
         gap: 50px;
       }
@@ -166,7 +166,7 @@
 
       .quality {
         .description {
-          margin-top: 30px;
+          margin-top: 60px;
         }
         h2 {
           font-size: 20px;

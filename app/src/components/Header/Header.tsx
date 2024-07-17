@@ -10,10 +10,14 @@ import en from "../../image/icon/EN.svg";
 import es from "../../image/icon/ES.svg";
 import { useState } from "react";
 
-export default function Header() {
+interface HeaderData {
+  currentLanguage: Function,
+  setCurrentLanguage: Function
+}
+
+export default function Header({currentLanguage, setCurrentLanguage}: HeaderData) {
   const [menu, setMenu] = useState(false);
   const [menuLanguage, setMenuLanguage] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("RU");
 
   const updateLanguage = (lang: string): undefined => {
     setCurrentLanguage(lang);
@@ -41,9 +45,9 @@ export default function Header() {
       <header className={cl.header}>
         <img src={logo} alt="logo" className={cl.logo} />
         <div className={cl.nav}>
-          <a href="#">Услуги</a>
-          <a href="#">О компании</a>
-          <a href="#">Контакты</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'Услуги' : ''} {currentLanguage() === 'EN' ? 'Services' : ''} {currentLanguage() === 'ES' ? 'Servicios' : ''}</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'О компании' : ''} {currentLanguage() === 'EN' ? 'About company' : ''} {currentLanguage() === 'ES' ? 'Acerca de la compañía' : ''}</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'Контакты' : ''} {currentLanguage() === 'EN' ? 'Contacts' : ''} {currentLanguage() === 'ES' ? 'Contactos' : ''}</a>
         </div>
         <div className={cl.contact}>
           <a href="#">
@@ -69,7 +73,7 @@ export default function Header() {
               onClick={() => activeMenuLanguage()}
             >
               <img src={language} alt="language" />
-              <p>{currentLanguage}</p>
+              <p>{currentLanguage()}</p>
             </div>
             <div
               className={
@@ -112,11 +116,11 @@ export default function Header() {
         }
       >
         <div className={cl.nav}>
-          <a href="#">Наши услуги</a>
-          <a href="#">О компании</a>
-          <a href="#">Контакты</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'Наши услуги' : ''} {currentLanguage() === 'EN' ? 'Our services' : ''} {currentLanguage() === 'ES' ? 'Nuestros servicios' : ''}</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'О компании' : ''} {currentLanguage() === 'EN' ? 'About company' : ''} {currentLanguage() === 'ES' ? 'Acerca de la compañía' : ''}</a>
+          <a href="#">{currentLanguage() === 'RU' ? 'Контакты' : ''} {currentLanguage() === 'EN' ? 'Contacts' : ''} {currentLanguage() === 'ES' ? 'Contactos' : ''}</a>
         </div>
-        <button className={cl.btn__form}>Связаться с нами</button>
+        <button className={cl.btn__form}>{currentLanguage() === 'RU' ? 'Связаться с нами' : ''} {currentLanguage() === 'EN' ? 'Connect with us' : ''} {currentLanguage() === 'ES' ? 'Conéctate con nosotros' : ''}</button>
         <hr />
         <a href="tel:+34 622 947 742" className={cl.phone}>
           <img src={phone} alt="phone" />
@@ -124,15 +128,11 @@ export default function Header() {
         </a>
         <div>
           <div
-            className={
-              menuLanguage
-                ? [cl.language, cl.language__active].join(" ")
-                : cl.language
-            }
+            className={ menuLanguage ? [cl.language, cl.language__active].join(" ") : cl.language }
             onClick={() => activeMenuLanguage()}
           >
             <img src={language} alt="language" />
-            <p>{currentLanguage}</p>
+            <p>{currentLanguage()}</p>
           </div>
           <div
             className={
@@ -158,7 +158,7 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <h2>Следите за нами в социальных сетях:</h2>
+        <h2>{currentLanguage() === 'RU' ? 'Следите за нами в социальных сетях:' : ''} {currentLanguage() === 'EN' ? 'Follow us on social networks:' : ''} {currentLanguage() === 'ES' ? 'Síguenos en redes sociales:' : ''}</h2>
         <div className={cl.website}>
           <a href="#">
             <img src={instagram} alt="instagram" className={cl.webapp} />

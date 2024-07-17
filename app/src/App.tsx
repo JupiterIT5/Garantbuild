@@ -11,17 +11,27 @@ import { plumbingDescription, plumbingFon, plumbingProjects, plumbingSubTitle, p
 import { renowationWorkDescription, renowationWorkFon, renowationWorkProjects, renowationWorkSubTitle, renowationWorkTitle, renowationWorkTitle2 } from "./image/photo/Catalog/renovationWork/renowationWork.ts"
 
 function App() {
+
+  const setCurrentLanguage = (lang: string) => {
+    localStorage.setItem('Language', lang)
+    location.reload()
+  }
+
+  const Language = () => {
+    return localStorage.getItem('Language')
+  }
+
   return (
     <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/plumbing" element={<Catalog fon={plumbingFon} projects={plumbingProjects} title={plumbingTitle} subtitle={plumbingSubTitle} title2={plumbingTitle2} description={plumbingDescription}/>} />
-      <Route path="/ceilings" element={<Catalog fon={ceilingFon} projects={ceilingProjects} title={ceilingTitle} subtitle={ceilingSubTitle} title2={ceilingTitle2} description={ceilingDescription}/>} />
-      <Route path="/buildHouses" element={<Catalog fon={buildHouseFon} projects={buildHouseProjects} title={buildHouseTitle} subtitle={buildHouseSubTitle} title2={buildHouseTitle2} description={buildHouseDescription}/>} />
-      <Route path="/electrician" element={<Catalog fon={electricianFon} projects={electricianProjects} title={electricianTitle} subtitle={electricianSubTitle} title2={electricianTitle2} description={electricianDescription}/>} />
-      <Route path="/renovationWork" element={<Catalog fon={renowationWorkFon} projects={renowationWorkProjects} title={renowationWorkTitle} subtitle={renowationWorkSubTitle} title2={renowationWorkTitle2} description={renowationWorkDescription}/>} />
-      <Route path="/facades" element={<Catalog fon={facadesFon} projects={facadesProjects} title={facadesTitle} subtitle={facadesSubTitle} title2={facadesTitle2} description={facadesDescription}/>} />
-      <Route path="/landscapingWorks" element={<Catalog fon={labdscapingWorksFon} projects={labdscapingWorksProjects} title={labdscapingWorksTitle} subtitle={labdscapingWorksSubTitle} title2={labdscapingWorksTitle2} description={labdscapingWorksDescription}/>} />
-      <Route path="/buildPools" element={<Catalog fon={buildPoolsFon} projects={buildPoolsProjects} title={buildPoolsTitle} subtitle={buildPoolsSubTitle} title2={buildPoolsTitle2} description={buildPoolsDescription}/>} />
+      <Route path="/" element={<Home language={Language} setLanguage={setCurrentLanguage}/>}/>
+      <Route path="/plumbing" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={plumbingFon} projects={plumbingProjects} title={plumbingTitle} subtitle={plumbingSubTitle} title2={plumbingTitle2} description={plumbingDescription}/>} />
+      <Route path="/ceilings" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={ceilingFon} projects={ceilingProjects} title={ceilingTitle} subtitle={ceilingSubTitle} title2={ceilingTitle2} description={ceilingDescription}/>} />
+      <Route path="/buildHouses" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={buildHouseFon} projects={buildHouseProjects} title={buildHouseTitle} subtitle={buildHouseSubTitle} title2={buildHouseTitle2} description={buildHouseDescription}/>} />
+      <Route path="/electrician" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={electricianFon} projects={electricianProjects} title={electricianTitle} subtitle={electricianSubTitle} title2={electricianTitle2} description={electricianDescription}/>} />
+      <Route path="/renovationWork" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={renowationWorkFon} projects={renowationWorkProjects} title={renowationWorkTitle} subtitle={renowationWorkSubTitle} title2={renowationWorkTitle2} description={renowationWorkDescription}/>} />
+      <Route path="/facades" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={facadesFon} projects={facadesProjects} title={facadesTitle} subtitle={facadesSubTitle} title2={facadesTitle2} description={facadesDescription}/>} />
+      <Route path="/landscapingWorks" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={labdscapingWorksFon} projects={labdscapingWorksProjects} title={labdscapingWorksTitle} subtitle={labdscapingWorksSubTitle} title2={labdscapingWorksTitle2} description={labdscapingWorksDescription}/>} />
+      <Route path="/buildPools" element={<Catalog language={Language} setLanguage={setCurrentLanguage} fon={buildPoolsFon} projects={buildPoolsProjects} title={buildPoolsTitle} subtitle={buildPoolsSubTitle} title2={buildPoolsTitle2} description={buildPoolsDescription}/>} />
     </Routes>
   )
 }

@@ -1,11 +1,12 @@
 import cl from "./footer.module.scss";
+import LanguageData from "../interface/Language";
 import logo from "../../image/photo/logo2.png";
 import phone from "../../image/icon/phone2.svg";
 import instagram from "../../image/icon/instagram2.svg";
 import facebook from "../../image/icon/facebook2.svg";
 import whatapp from "../../image/icon/whatapp2.svg";
 
-export default function Footer() {
+export default function Footer({currentLanguage}: LanguageData) {
   return (
     <footer className={cl.footer}>
       <div className={cl.section__first}>
@@ -13,13 +14,13 @@ export default function Footer() {
         <div className={cl.footer__container}>
           <ul>
             <li>
-              <a href="#">Наши услуги</a>
+              <a href="#">{currentLanguage() === 'RU' ? 'Наши услуги' : ''} {currentLanguage() === 'EN' ? 'Our services' : ''} {currentLanguage() === 'ES' ? 'Nuestros servicios' : ''}</a>
             </li>
             <li>
-              <a href="#">О компании</a>
+              <a href="#">{currentLanguage() === 'RU' ? 'О компании' : ''} {currentLanguage() === 'EN' ? 'About company' : ''} {currentLanguage() === 'ES' ? 'Acerca de la compañía' : ''}</a>
             </li>
             <li>
-              <a href="#">Контакты</a>
+              <a href="#">{currentLanguage() === 'RU' ? 'Контакты' : ''} {currentLanguage() === 'EN' ? 'Contacts' : ''} {currentLanguage() === 'ES' ? 'Contactos' : ''}</a>
             </li>
           </ul>
           <div className={cl.contact}>
@@ -27,7 +28,7 @@ export default function Footer() {
               <img src={phone} alt="phone" />
               <p>+34 622 947 742</p>
             </a>
-            <p>Следите за нами в социальных сетях:</p>
+            <p>{currentLanguage() === 'RU' ? 'Следите за нами в социальных сетях:' : ''} {currentLanguage() === 'EN' ? 'Follow us on social networks:' : ''} {currentLanguage() === 'ES' ? 'Síguenos en redes sociales:' : ''}</p>
             <div className={cl.webapp}>
               <img src={instagram} alt="instagram" />
               <img src={facebook} alt="facebook" />
@@ -37,8 +38,8 @@ export default function Footer() {
         </div>
       </div>
       <div className={cl.section__second}>
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Согласие на обработку<br/>персональной информации</a>
+        <a href="#">{currentLanguage() === 'RU' ? 'Политика конфиденциальности' : ''} {currentLanguage() === 'EN' ? 'Privacy Policy' : ''} {currentLanguage() === 'ES' ? 'Política de privacidad' : ''}</a>
+        {currentLanguage() === 'RU' ? <a href="#">Согласие на обреботку<br/>персональной информации</a> : ''} {currentLanguage() === 'EN' ? <a href="#">Consent to the processing of<br/>personal information</a> : ''} {currentLanguage() === 'ES' ? <a href="#">Consentimiento al tratamiento<br/>de datos personales</a> : ''}
       </div>
     </footer>
   );

@@ -76,7 +76,6 @@
         gap: 10px;
         position: relative;
         cursor: pointer;
-        margin-bottom: 10px;
 
         img {
           width: 30px;
@@ -128,6 +127,7 @@
         position: absolute;
         z-index: 999;
         background-color: #fff;
+        margin-top: 10px;
 
         p {
           display: flex;
@@ -407,6 +407,7 @@
     }
 
     .contact {
+      align-items: center;
       .webapp {
         width: 30px;
         height: 30px;
@@ -425,25 +426,26 @@
           font-size: 16px;
         }
       }
-
-      .language {
-        width: 88px;
-        height: 32px;
-
-        img {
-          width: 28px;
-          height: 28px;
-        }
-
-        p {
-          font-size: 16px;
+      .language__container {
+        .language {
+          width: 88px;
+          height: 32px;
+  
+          img {
+            width: 28px;
+            height: 28px;
+          }
+  
+          p {
+            font-size: 16px;
+          }
         }
       }
     }
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1130px) {
   .header {
     .nav,
     .contact,
