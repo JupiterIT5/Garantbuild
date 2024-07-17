@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"
 import Header from "../components/Header/Header"
 import cl from './style.module.scss'
 import Steps from "../components/Steps/Steps"
@@ -17,7 +16,6 @@ interface PageData {
 }
 
 export default function Catalog({fon, projects, title, subtitle, title2, description}: PageData) {
-    const navigate = useNavigate()
 
     return (
         <div className={cl.container}>
