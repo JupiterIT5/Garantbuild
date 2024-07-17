@@ -1,5 +1,6 @@
 import cl from "./services.module.scss";
 import { useNavigate } from "react-router-dom";
+import array from '../../../image/icon/array3.svg'
 
 export default function Services() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function Services() {
             Полный комплекс сантехнических услуг: от монтажа водонагревателей до
             установки систем отопления
           </p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div className={cl.service} onClick={() => navigateToPage("ceilings")}>
           <div className={[cl.service2, cl.service_img].join(" ")}></div>
@@ -27,6 +29,7 @@ export default function Services() {
             Профессиональная отделка потолков: натяжные конструкции,
             гипсокартон, покраска
           </p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div
           className={cl.service}
@@ -35,6 +38,7 @@ export default function Services() {
           <div className={[cl.service3, cl.service_img].join(" ")}></div>
           <h2>Строительство домов</h2>
           <p>Строительство домов любой сложности</p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div
           className={cl.service}
@@ -43,6 +47,7 @@ export default function Services() {
           <div className={[cl.service4, cl.service_img].join(" ")}></div>
           <h2>Электрик </h2>
           <p>Все виды электромонтажных работ для вашего дома и бизнеса</p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div
           className={cl.service}
@@ -54,6 +59,7 @@ export default function Services() {
             Профессионально выполняем весь спектр . ремонтных работ для дома и
             офисов
           </p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div className={cl.service} onClick={() => navigateToPage("facades")}>
           <div className={[cl.service6, cl.service_img].join(" ")}></div>
@@ -62,6 +68,7 @@ export default function Services() {
             Фасадные работы: очистка, декоративная отделка, покраска,
             гидроизоляция.
           </p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div
           className={cl.service}
@@ -73,6 +80,7 @@ export default function Services() {
             Преобразим ваш участок: озеленение, автоматический полив, освещение
             и тротуарные дорожки.
           </p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
         <div
           className={cl.service}
@@ -81,6 +89,7 @@ export default function Services() {
           <div className={[cl.service8, cl.service_img].join(" ")}></div>
           <h2>Строительство бассейнов</h2>
           <p>Профессиональное строительство бассейнов любого объема</p>
+          <img src={array} alt="array" className={cl.array}/>
         </div>
       </div>
     </section>

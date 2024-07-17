@@ -103,6 +103,21 @@
         color: #071b29;
         opacity: 0.8;
       }
+
+      .array {
+        opacity: 0;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        transition: .3s ease-out;
+      }
+
+      &:hover .array {
+        opacity: 1;
+        transition: .3s ease-in;
+      }
     }
   }
 }

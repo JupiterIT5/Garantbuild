@@ -113,7 +113,11 @@
       font-size: 18px;
       line-height: 22px;
       color: #071b29;
-      opacity: 0.4;
+      outline: none;
+      
+      &::placeholder {
+        opacity: 0.4;
+      }
     }
 
     textarea {
@@ -127,8 +131,12 @@
       font-size: 18px;
       line-height: 22px;
       color: #071b29;
-      opacity: 0.4;
       resize: none;
+      outline: none;
+
+      &::placeholder {
+        opacity: 0.4;
+      }
     }
 
     .submit {

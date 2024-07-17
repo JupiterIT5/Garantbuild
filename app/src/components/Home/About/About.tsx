@@ -21,9 +21,9 @@ export default function About() {
         <h3>Рассчитаем стоимость вашего проекта</h3>
         <p>Отправьте заявку и наш менеджер свяжется с вами</p>
         <form>
-            <input type="text" name="name" className="name" placeholder="Ваше имя"/>
-            <input type="text" name="phone" className="phone" placeholder="Номер телефона"/>
-            <textarea placeholder="Описание проекта"></textarea>
+            <input type="text" name="name" className="name" placeholder="Ваше имя" minLength={2}/>
+            <input type="text" name="phone" className="phone" placeholder="Номер телефона" minLength={20}/>
+            <textarea placeholder="Описание проекта" name="description" className="description" minLength={5}></textarea>
             <button className={cl.submit}>Отправить заявку</button>
         </form>
       </div>
