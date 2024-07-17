@@ -9,8 +9,14 @@ import { facadesDescription, facadesFon, facadesProjects, facadesSubTitle, facad
 import { labdscapingWorksDescription, labdscapingWorksFon, labdscapingWorksProjects, labdscapingWorksSubTitle, labdscapingWorksTitle, labdscapingWorksTitle2 } from "./image/photo/Catalog/landscapingWorks/labdscapingWorks.ts"
 import { plumbingDescription, plumbingFon, plumbingProjects, plumbingSubTitle, plumbingTitle, plumbingTitle2 } from "./image/photo/Catalog/plumbing/plumbing.ts"
 import { renowationWorkDescription, renowationWorkFon, renowationWorkProjects, renowationWorkSubTitle, renowationWorkTitle, renowationWorkTitle2 } from "./image/photo/Catalog/renovationWork/renowationWork.ts"
+import { useEffect } from "react"
 
 function App() {
+  useEffect(() => {
+    if (!localStorage.getItem('Language')) {
+      localStorage.setItem('Language', 'EN')
+    }
+  }, [])
 
   const setCurrentLanguage = (lang: string) => {
     localStorage.setItem('Language', lang)
