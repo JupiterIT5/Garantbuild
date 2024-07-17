@@ -1,0 +1,112 @@
+.section__description {
+  margin-top: 30px;
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 60px;
+
+    p,
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: #071b29;
+      cursor: pointer;
+    }
+
+    span {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+
+  .title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #071b29;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    width: 100%;
+    height: auto;
+    padding: 26px;
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 1440px;
+
+    h3 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 34px;
+      text-transform: uppercase;
+      color: #071b29;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 22px;
+      color: #071b29;
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 952px) {
+    .section__description {
+        .description {
+            h3 {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 655px) {
+    .section__description {
+        .title {
+            font-size: 28px;
+            line-height: 36px;
+        }
+
+        .description {
+            h3 {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .section__description {
+        .description {
+            padding: 18px;
+        }
+    }
+}
