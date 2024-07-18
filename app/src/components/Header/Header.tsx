@@ -45,7 +45,7 @@ export default function Header({currentLanguage, setCurrentLanguage}: HeaderData
   return (
     <nav className={cl.header__container}>
       <header className={cl.header}>
-        <img src={logo} alt="logo" className={cl.logo} style={{cursor: 'pointer'}} onClick={() => navigate('')}/>
+        <img src={logo} alt="logo" className={cl.logo} style={{cursor: 'pointer'}} onClick={() => navigate('/')}/>
         <div className={cl.nav}>
           <a href="/#services">{currentLanguage() === 'RU' ? 'Услуги' : ''} {currentLanguage() === 'EN' ? 'Services' : ''} {currentLanguage() === 'ES' ? 'Servicios' : ''}</a>
           <a href="/#company">{currentLanguage() === 'RU' ? 'О компании' : ''} {currentLanguage() === 'EN' ? 'About company' : ''} {currentLanguage() === 'ES' ? 'Acerca de la compañía' : ''}</a>

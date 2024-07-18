@@ -11,9 +11,9 @@ export default function Footer({currentLanguage}: LanguageData) {
   const navigate = useNavigate()
 
   return (
-    <footer className={cl.footer}>
+    <footer className={cl.footer} id='contact'>
       <div className={cl.section__first}>
-        <img src={logo} alt="logo" style={{cursor: 'pointer'}} onClick={() => navigate('')}/>
+        <img src={logo} alt="logo" style={{cursor: 'pointer'}} onClick={() => navigate('/')}/>
         <div className={cl.footer__container}>
           <ul>
             <li>

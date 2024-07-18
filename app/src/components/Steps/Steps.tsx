@@ -11,7 +11,7 @@ import step8 from '../../image/photo/Steps/step8.png'
 
 export default function Steps({currentLanguage}: LanguageData) {
     return (
-        <section className={cl.section__steps} id='contact'>
+        <section className={cl.section__steps}>
             {currentLanguage() === 'RU' ? <h2 className={cl.title}>Шаги к реализации<br/>проекта</h2> : ''} {currentLanguage() === 'EN' ? <h2 className={cl.title}>Steps to project<br/>implementation</h2> : ''} {currentLanguage() === 'ES' ? <h2 className={cl.title}>Pasos para la implementación<br/>del proyecto.</h2> : ''}
             <div className={cl.steps__container}>
                 <div className={cl.steps}>
