@@ -10,9 +10,9 @@ export default function Project({projects, currentLanguage}: ProjectData) {
         <section className={cl.section__projects}>
             <h2 className={cl.title}>{currentLanguage() === 'RU' ? 'реализованные проекты:' : ''} {currentLanguage() === 'EN' ? 'completed projects:' : ''} {currentLanguage() === 'ES' ? 'proyectos completados:' : ''}</h2>
             <div className={cl.project__list}>
-                <img src={projects[0]} alt="project" />
-                <img src={projects[1]} alt="project" />
-                <img src={projects[2]} alt="project" />
+                {projects.map((image) =>
+                    <img src={image} alt="number" key={image} />
+                )}
             </div>
         </section>
     )
