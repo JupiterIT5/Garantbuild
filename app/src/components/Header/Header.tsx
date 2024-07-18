@@ -13,10 +13,11 @@ import { useNavigate } from "react-router-dom";
 
 interface HeaderData {
   currentLanguage: Function,
-  setCurrentLanguage: Function
+  setCurrentLanguage: Function,
+  setMenuCount: Function
 }
 
-export default function Header({currentLanguage, setCurrentLanguage}: HeaderData) {
+export default function Header({currentLanguage, setCurrentLanguage, setMenuCount}: HeaderData) {
   const [menu, setMenu] = useState(false);
   const [menuLanguage, setMenuLanguage] = useState(false);
   const navigate = useNavigate()
@@ -42,6 +43,11 @@ export default function Header({currentLanguage, setCurrentLanguage}: HeaderData
     }
   };
 
+  const activateMenuCount = () => {
+    setMenuCount(true)
+    setMenu(false)
+  }
+
   return (
     <nav className={cl.header__container}>
       <header className={cl.header}>
@@ -58,7 +64,7 @@ export default function Header({currentLanguage, setCurrentLanguage}: HeaderData
           <a href="https://www.facebook.com/garantbuild">
             <img src={facebook} alt="facebook" className={cl.webapp} />
           </a>
-          <a href="tel:+34622947742">
+          <a href="https://wa.me/+34622947742">
             <img src={whatapp} alt="whatapp" className={cl.webapp} />
           </a>
           <a href="tel:+34622947742" className={cl.phone}>
@@ -122,7 +128,7 @@ export default function Header({currentLanguage, setCurrentLanguage}: HeaderData
           <a href="/#company">{currentLanguage() === 'RU' ? 'О компании' : ''} {currentLanguage() === 'EN' ? 'About company' : ''} {currentLanguage() === 'ES' ? 'Acerca de la compañía' : ''}</a>
           <a href="#contact">{currentLanguage() === 'RU' ? 'Контакты' : ''} {currentLanguage() === 'EN' ? 'Contacts' : ''} {currentLanguage() === 'ES' ? 'Contactos' : ''}</a>
         </div>
-        <button className={cl.btn__form}>{currentLanguage() === 'RU' ? 'Связаться с нами' : ''} {currentLanguage() === 'EN' ? 'Connect with us' : ''} {currentLanguage() === 'ES' ? 'Conéctate con nosotros' : ''}</button>
+        <button className={cl.btn__form} onClick={() => activateMenuCount()}>{currentLanguage() === 'RU' ? 'Связаться с нами' : ''} {currentLanguage() === 'EN' ? 'Connect with us' : ''} {currentLanguage() === 'ES' ? 'Conéctate con nosotros' : ''}</button>
         <hr />
         <a href="tel:+34622947742" className={cl.phone}>
           <img src={phone} alt="phone" />
@@ -168,7 +174,7 @@ export default function Header({currentLanguage, setCurrentLanguage}: HeaderData
           <a href="https://www.facebook.com/garantbuild">
             <img src={facebook} alt="facebook" className={cl.webapp} />
           </a>
-          <a href="tel:+34622947742">
+          <a href="https://wa.me/+34622947742">
             <img src={whatapp} alt="whatapp" className={cl.webapp} />
           </a>
         </div>

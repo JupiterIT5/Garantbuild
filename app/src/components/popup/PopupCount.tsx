@@ -95,7 +95,7 @@ export default function PopupCount({ setMenuCount, setMenuThank, currentLanguage
               "Número de teléfono",
             ])}
             onChange={(e) => setPhone(e.target.value)}
-            minLength={10}
+            minLength={7}
           />
           <h6 className={phoneError ? cl.text__error : cl.text__none}>
             {currentLanguage() === "RU"
@@ -132,8 +132,8 @@ export default function PopupCount({ setMenuCount, setMenuThank, currentLanguage
               : ""}
           </h6>
           <button className={cl.submit}>
-            {currentLanguage() === "RU" ? "Отправить заявку" : ""}{" "}
-            {currentLanguage() === "EN" ? "Send a request" : ""}{" "}
+            {currentLanguage() === "RU" ? "Отправить заявку" : ""}
+            {currentLanguage() === "EN" ? "Send a request" : ""}
             {currentLanguage() === "ES" ? "Enviar una solicitud" : ""}
           </button>
         </form>

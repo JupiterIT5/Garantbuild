@@ -22,7 +22,7 @@ export default function Home({language, setLanguage, menuCount, setMenuCount, me
 
   return (
     <div className={cl.container}>
-      <Header setCurrentLanguage={setLanguage} currentLanguage={language}/>
+      <Header setCurrentLanguage={setLanguage} currentLanguage={language} setMenuCount={setMenuCount}/>
       <About currentLanguage={language} setMenu={setMenu}/>
       <Services currentLanguage={language}/>
       <Quality currentLanguage={language}/>

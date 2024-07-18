@@ -27,7 +27,7 @@ export default function Catalog({language, setLanguage, fon, projects, title, su
 
     return (
         <div className={cl.container}>
-            <Header setCurrentLanguage={setLanguage} currentLanguage={language} />
+            <Header setCurrentLanguage={setLanguage} currentLanguage={language} setMenuCount={setMenuCount}/>
             <About fon={fon} title={title} subtitle={subtitle} currentLanguage={language}/>
             <Description currentPage={title} title={title2} description={description} currentLanguage={language}/>
             <Project projects={projects} currentLanguage={language} />

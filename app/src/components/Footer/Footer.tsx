@@ -35,7 +35,7 @@ export default function Footer({currentLanguage}: LanguageData) {
             <div className={cl.webapp}>
               <a href="https://www.instagram.com/garantbuilds"><img src={instagram} alt="instagram" /></a>
               <a href="https://www.facebook.com/garantbuild"><img src={facebook} alt="facebook" /></a>
-              <a href="tel:+34622947742"><img src={whatapp} alt="whatapp" /></a>
+              <a href="https://wa.me/+34622947742"><img src={whatapp} alt="whatapp" /></a>
             </div>
           </div>
         </div>
