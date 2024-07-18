@@ -11,7 +11,7 @@ export default function Services({currentLanguage}: LanguageData) {
   };
 
   return (
-    <section className={cl.section__service}>
+    <section className={cl.section__service} id="services">
       <h2 className={cl.title}>{currentLanguage() === 'RU' ? 'Наши услуги' : ''} {currentLanguage() === 'EN' ? 'Our services' : ''} {currentLanguage() === 'ES' ? 'Nuestros servicios' : ''}</h2>
       <div className={cl.service__container}>
         <div className={cl.service} onClick={() => navigateToPage("plumbing")}>

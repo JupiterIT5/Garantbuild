@@ -4,7 +4,7 @@ import LanguageData from "../../interface/Language";
 
 export default function Experience({currentLanguage}: LanguageData) {
   return (
-    <section className={cl.section__experience}>
+    <section className={cl.section__experience} id="company">
       <h2 className={cl.title}>{currentLanguage() === 'RU' ? 'Опыт и надежность' : ''} {currentLanguage() === 'EN' ? 'Experience and reliability' : ''} {currentLanguage() === 'ES' ? 'Experiencia y confiabilidad' : ''}</h2>
       <div className={cl.experience__container}>
         <div className={cl.about__company}>

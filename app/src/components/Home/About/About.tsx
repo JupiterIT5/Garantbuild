@@ -1,16 +1,14 @@
 import cl from "./about.module.scss";
 import array from '../../../image/icon/array2.svg'
 import LanguageData from "../../interface/Language";
-import React, { useState } from "react";
-import axios from "axios";
+import { sendMessage } from "../../API/telegram";
+import { useState } from "react";
 
 export default function About({currentLanguage}: LanguageData) {
-  const [name, setName] = useState<string>('')
-  const [phone, setPhone] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
-  const [errorName, setErrorName] = useState<boolean>(false)
-  const [errorPhone, setErrorPhone] = useState<boolean>(false)
-  const [errorMessage, setErrorMessage] = useState<boolean>(false)
+
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
 
   const handlePlaceholder = (currentLanguage: Function, text: Array<string>): string | undefined => {
     if (currentLanguage() === 'RU') {
@@ -22,31 +20,9 @@ export default function About({currentLanguage}: LanguageData) {
     }
   }
 
-  const sendMessage = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault()
-    if (!name || name.length < 2) {
-      setErrorName(true)
-      return
-    } else {
-      setErrorName(false)
-    }
-    if (!phone) {
-      setErrorPhone(true)
-      return 
-    } else {
-      setErrorPhone(false)
-    }
-    if (!message || message.length < 5) {
-      setErrorMessage(true)
-      return
-    } else {
-      setErrorMessage(false)
-    }
-    await axios.post('https://telegram-message-firki.amvera.io/sending', {
-      name: name,
-      phone: phone,
-      message: message,
-    })
+  const handleMessage = async (): Promise<void> => {
+    const messages = `Имя пользователя: ${name}...  Телефон: ${phone}...  Сообщение: ${message}`
+    await sendMessage(messages)
   }
 
   return (
@@ -66,14 +42,11 @@ export default function About({currentLanguage}: LanguageData) {
       <div className={cl.form}>
         <h3>{currentLanguage() === 'RU' ? 'Рассчитаем стоимость вашего проекта' : ''} {currentLanguage() === 'EN' ? 'We will calculate the cost of your project' : ''} {currentLanguage() === 'ES' ? 'Calcularemos el coste de tu proyecto.' : ''}</h3>
         <p>{currentLanguage() === 'RU' ? 'Отправьте заявку и наш менеджер свяжется с вами' : ''} {currentLanguage() === 'EN' ? 'Send a request and our manager will contact you' : ''} {currentLanguage() === 'ES' ? 'Envíe una solicitud y nuestro gerente se comunicará con usted.' : ''}</p>
-        <form>
-            <input onChange={(e) => setName(e.target.value)} type="text" name="name" className={errorName ? cl.input__error : cl.name} placeholder={handlePlaceholder(currentLanguage, ['Ваше имя', 'Your name', 'Su nombre'])} minLength={2}/>
-            <h6 className={errorName ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать ваше имя' : ''} {currentLanguage() === 'EN' ? 'Your name is required' : ''} {currentLanguage() === 'ES' ? 'Tu nombre es requerido' : ''}</h6>
-            <input onChange={(e) => setPhone(e.target.value)} type="text" name="phone" className={errorPhone ? cl.input__error : cl.phone} placeholder={handlePlaceholder(currentLanguage, ['Номер телефона', 'Phone number', 'Número de teléfono'])} minLength={20}/>
-            <h6 className={errorPhone ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать номер телефона' : ''} {currentLanguage() === 'EN' ? 'You must provide a phone number' : ''} {currentLanguage() === 'ES' ? 'Debes proporcionar un número de teléfono.' : ''}</h6>
-            <textarea onChange={(e) => setMessage(e.target.value)} placeholder={handlePlaceholder(currentLanguage, ['Описание проекта', 'Project Description', 'Descripción del Proyecto'])} name="description" className={errorMessage ? cl.input__error : cl.description} minLength={5}></textarea>
-            <h6 className={errorMessage ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать описание проекта' : ''} {currentLanguage() === 'EN' ? 'A description of the project is required' : ''} {currentLanguage() === 'ES' ? 'Se requiere una descripción del proyecto.' : ''}</h6>
-            <button onClick={(e) => sendMessage(e)} className={cl.submit}>{currentLanguage() === 'RU' ? 'Отправить заявку' : ''} {currentLanguage() === 'EN' ? 'Send a request' : ''} {currentLanguage() === 'ES' ? 'Enviar una solicitud' : ''}</button>
+        <form onSubmit={handleMessage}>
+            <input type="text" name="name" placeholder={handlePlaceholder(currentLanguage, ['Ваше имя', 'Your name', 'Su nombre'])} onChange={(e) => setName(e.target.value)} minLength={2}/>
+            <input type="text" name="phone" placeholder={handlePlaceholder(currentLanguage, ['Номер телефона', 'Phone number', 'Número de teléfono'])} onChange={(e) => setPhone(e.target.value)} minLength={20}/>
+            <textarea placeholder={handlePlaceholder(currentLanguage, ['Описание проекта', 'Project Description', 'Descripción del Proyecto'])} name="message" onChange={(e) => setMessage(e.target.value)} minLength={5}></textarea>
+            <button className={cl.submit}>{currentLanguage() === 'RU' ? 'Отправить заявку' : ''} {currentLanguage() === 'EN' ? 'Send a request' : ''} {currentLanguage() === 'ES' ? 'Enviar una solicitud' : ''}</button>
         </form>
       </div>
     </div>
