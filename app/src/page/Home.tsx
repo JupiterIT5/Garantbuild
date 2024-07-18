@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import About from "../components/Home/About/About";
@@ -12,12 +11,14 @@ import PopupCount from "../components/popup/PopupCount";
 
 interface HomeData {
   language: Function,
-  setLanguage: Function
+  setLanguage: Function,
+  menuCount: boolean,
+  setMenuCount: Function,
+  menu: boolean,
+  setMenu: Function,
 }
 
-export default function Home({language, setLanguage}: HomeData) {
-  const [menu, setMenu] = useState(false)
-  const [menuCount, setMenuCount] = useState(false)
+export default function Home({language, setLanguage, menuCount, setMenuCount, menu, setMenu}: HomeData) {
 
   return (
     <div className={cl.container}>
