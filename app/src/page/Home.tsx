@@ -7,7 +7,8 @@ import Quality from "../components/Home/Quality/Quality";
 import Services from "../components/Home/Services/Services";
 import Steps from "../components/Steps/Steps";
 import cl from "./style.module.scss";
-import Popup from "../components/popup/Popup";
+import PopupThank from "../components/popup/PopupThank";
+import PopupCount from "../components/popup/PopupCount";
 
 interface HomeData {
   language: Function,
@@ -16,6 +17,7 @@ interface HomeData {
 
 export default function Home({language, setLanguage}: HomeData) {
   const [menu, setMenu] = useState(false)
+  const [menuCount, setMenuCount] = useState(false)
 
   return (
     <div className={cl.container}>
@@ -24,9 +26,10 @@ export default function Home({language, setLanguage}: HomeData) {
       <Services currentLanguage={language}/>
       <Quality currentLanguage={language}/>
       <Experience currentLanguage={language}/>
-      <Steps currentLanguage={language}/>
+      <Steps currentLanguage={language} setMenuCount={setMenuCount}/>
       <Footer currentLanguage={language}/>
-      {menu ? <Popup setMenu={setMenu}/> : ''}
+      {menu ? <PopupThank currentLanguage={language} setMenu={setMenu}/> : ''}
+      {menuCount ? <PopupCount setMenuCount={setMenuCount} setMenuThank={setMenu} currentLanguage={language}/> : ''}
     </div>
   );
 }

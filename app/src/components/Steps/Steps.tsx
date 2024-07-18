@@ -9,7 +9,11 @@ import step6 from '../../image/photo/Steps/step6.png'
 import step7 from '../../image/photo/Steps/step7.png'
 import step8 from '../../image/photo/Steps/step8.png'
 
-export default function Steps({currentLanguage}: LanguageData) {
+interface StepsData extends LanguageData {
+    setMenuCount: Function
+}
+
+export default function Steps({currentLanguage, setMenuCount}: StepsData) {
     return (
         <section className={cl.section__steps}>
             {currentLanguage() === 'RU' ? <h2 className={cl.title}>Шаги к реализации<br/>проекта</h2> : ''} {currentLanguage() === 'EN' ? <h2 className={cl.title}>Steps to project<br/>implementation</h2> : ''} {currentLanguage() === 'ES' ? <h2 className={cl.title}>Pasos para la implementación<br/>del proyecto.</h2> : ''}
@@ -18,7 +22,7 @@ export default function Steps({currentLanguage}: LanguageData) {
                     <img src={step1} alt="step1" />
                     <h2>{currentLanguage() === 'RU' ? 'Оставьте заявку' : ''} {currentLanguage() === 'EN' ? 'Leave a request' : ''} {currentLanguage() === 'ES' ? 'Dejar una solicitud' : ''}</h2>
                     <p>{currentLanguage() === 'RU' ? 'Вы оставляете заявку на сайте или по телефону, для уточнения всех деталий' : ''} {currentLanguage() === 'EN' ? 'You leave a request on the website or by phone to clarify all the details.' : ''} {currentLanguage() === 'ES' ? 'Dejas una solicitud en el sitio web o por teléfono para aclarar todos los detalles.' : ''}</p>
-                    <button>{currentLanguage() === 'RU' ? 'Оставьте заявку' : ''} {currentLanguage() === 'EN' ? 'Leave a request' : ''} {currentLanguage() === 'ES' ? 'Dejar una solicitud' : ''}</button>
+                    <button onClick={() => setMenuCount(true)}>{currentLanguage() === 'RU' ? 'Оставьте заявку' : ''} {currentLanguage() === 'EN' ? 'Leave a request' : ''} {currentLanguage() === 'ES' ? 'Dejar una solicitud' : ''}</button>
                 </div>
                 <div className={cl.steps}>
                     <img src={step2} alt="step2" />

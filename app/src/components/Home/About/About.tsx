@@ -63,7 +63,7 @@ export default function About({currentLanguage, setMenu}: AboutData) {
           <p>
             {currentLanguage() === 'RU' ? 'От сантехники и электрики до ландшафтного дизайна и кровли. Профессиональные работы для вашего комфорта и уюта.' : ''} {currentLanguage() === 'EN' ? 'From plumbing and electrical to landscaping and roofing. Professional work for your comfort and coziness.' : ''} {currentLanguage() === 'ES' ? 'Desde plomería y electricidad hasta paisajismo y techado. Trabajo profesional para su comodidad y calidez.' : ''}
           </p>
-          <a href="#">
+          <a href="#services">
             <h2>{currentLanguage() === 'RU' ? 'Посмотреть все услуги' : ''} {currentLanguage() === 'EN' ? 'View all services' : ''} {currentLanguage() === 'ES' ? 'Ver todos los servicios' : ''}</h2>
             <img src={array} alt="array" />
           </a>
@@ -75,7 +75,7 @@ export default function About({currentLanguage, setMenu}: AboutData) {
         <form onSubmit={handleMessage}>
             <input value={name} type="text" name="name" className={nameError ? cl.input__error : cl.name} placeholder={handlePlaceholder(currentLanguage, ['Ваше имя', 'Your name', 'Su nombre'])} onChange={(e) => setName(e.target.value)} minLength={2}/>
             <h6 className={nameError ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать ваше имя' : ''} {currentLanguage() === 'EN' ? 'Your name is required' : ''} {currentLanguage() === 'ES' ? 'Tu nombre es requerido' : ''}</h6>
-            <input value={phone} type="text" name="phone" className={phoneError ? cl.input__error : cl.phone} placeholder={handlePlaceholder(currentLanguage, ['Номер телефона', 'Phone number', 'Número de teléfono'])} onChange={(e) => setPhone(e.target.value)} minLength={20}/>
+            <input value={phone} type="text" name="phone" className={phoneError ? cl.input__error : cl.phone} placeholder={handlePlaceholder(currentLanguage, ['Номер телефона', 'Phone number', 'Número de teléfono'])} onChange={(e) => setPhone(e.target.value)} minLength={10}/>
             <h6 className={phoneError ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать ваш номер телефона' : ''} {currentLanguage() === 'EN' ? 'You must provide your phone number' : ''} {currentLanguage() === 'ES' ? 'Debes proporcionar tu número de teléfono.' : ''}</h6>
             <textarea value={message} className={messageError ? cl.input__error : cl.message} placeholder={handlePlaceholder(currentLanguage, ['Описание проекта', 'Project Description', 'Descripción del Proyecto'])} name="message" onChange={(e) => setMessage(e.target.value)} minLength={5}></textarea>
             <h6 className={messageError ? cl.text__error : cl.text__none}>{currentLanguage() === 'RU' ? 'Необходимо указать описание проекта' : ''} {currentLanguage() === 'EN' ? 'A description of the project is required' : ''} {currentLanguage() === 'ES' ? 'Se requiere una descripción del proyecto.' : ''}</h6>

@@ -1,0 +1,201 @@
+.section__popup {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+
+  .popup {
+    width: 88.9%;
+    height: auto;
+    background-color: rgba(6, 60, 95, 1);
+    background-image: url("../../image/photo/Catalog/fonPrice.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    .close {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .text {
+      width: 50%;
+
+      h2 {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 44px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+        opacity: 0.8;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 428px;
+
+      input,
+      textarea {
+        padding: 18px;
+        height: 48px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        outline: none;
+        resize: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+        
+        &::placeholder {
+            color: rgba($color: #000000, $alpha: 0.4);
+        }
+      }
+
+      textarea {
+        height: 106px;
+      }
+
+      .input__error {
+        border: 1px solid rgba(241, 0, 0, 1);
+      }
+
+      .text__none {
+        display: none;
+      }
+
+      .text__error {
+        margin-top: -10px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #f10000;
+      }
+
+      .submit {
+        height: 48px;
+        background: #f9932f;
+        border-radius: 4px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+    .section__popup {
+        .popup {
+            gap: 30px;
+            .text {
+                h2 {
+                    font-size: 28px;
+                    line-height: 36px;
+                }
+                
+                p {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+
+            .form {
+                width: 358px;
+            }
+        }
+    }
+}
+
+@media (max-width: 813px) {
+    .section__popup {
+        .popup {
+            gap: 20px;
+            .text {
+                h2 {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+
+            .form {
+                width: 308px;
+
+                input, textarea {
+                    font-size: 14px;
+
+                    &::placeholder {
+                        font-size: 14px;
+                    }
+                }
+
+                .text__error {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .section__popup {
+        .popup {
+            padding: 16px;
+            flex-direction: column;
+            align-items: center;
+
+            .text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .form {
+                width: 100%;
+            }
+        }
+    }
+}
