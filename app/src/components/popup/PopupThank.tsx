@@ -25,7 +25,7 @@ export default function Popup({setMenu, currentLanguage}: PopupData) {
             <a href="https://www.facebook.com/garantbuild">
               <img src={facebook} alt="facebook" className={cl.webapp} />
             </a>
-            <a href="tel:+34622947742">
+            <a href="https://wa.me/+34622947742">
               <img src={whatapp} alt="whatapp" className={cl.webapp} />
             </a>
           </div>
