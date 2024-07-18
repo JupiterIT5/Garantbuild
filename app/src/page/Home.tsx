@@ -8,6 +8,7 @@ import Steps from "../components/Steps/Steps";
 import cl from "./style.module.scss";
 import PopupThank from "../components/popup/PopupThank";
 import PopupCount from "../components/popup/PopupCount";
+import { useEffect } from "react";
 
 interface HomeData {
   language: Function,
@@ -19,6 +20,11 @@ interface HomeData {
 }
 
 export default function Home({language, setLanguage, menuCount, setMenuCount, menu, setMenu}: HomeData) {
+  useEffect(() => {
+    window.scrollTo({
+        top: 0
+    })
+}, [])
 
   return (
     <div className={cl.container}>

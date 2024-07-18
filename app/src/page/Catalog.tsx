@@ -7,6 +7,7 @@ import Description from "../components/Catalog/Description/Description"
 import Project from "../components/Catalog/Project/Project"
 import PopupThank from "../components/popup/PopupThank"
 import PopupCount from "../components/popup/PopupCount"
+import { useEffect } from "react"
 
 interface PageData {
     language: Function,
@@ -24,6 +25,11 @@ interface PageData {
 }
 
 export default function Catalog({language, setLanguage, fon, projects, title, subtitle, title2, description, menuCount, setMenuCount, menu, setMenu}: PageData) {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
 
     return (
         <div className={cl.container}>
